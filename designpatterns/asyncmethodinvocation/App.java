@@ -1,12 +1,13 @@
 package org.interview.preperation.java.designpatterns.asyncmethodinvocation;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 
 public class App {
-    private static final Logger logger = Logger.getLogger("App.class");
+    private static final Logger logger = Logger.getLogger("");
 
-    public static void main(String args[]) throws InterruptedException {
+    public static void main(String args[]) throws InterruptedException, ExecutionException {
         AsyncExecutor executor = new ThreadAsyncExecutor();
 
         AsyncResult<Integer> asyncResult1 = executor.startProcess(lazyVal(10, 500));
